@@ -1,5 +1,6 @@
 var assert = require('assert');
 var Parser = require('../lib/parser');
+var Pair = require('../lib/pair');
 var symbol = require('../lib/symbol');
 
 describe('Parser', function() {
@@ -48,6 +49,14 @@ describe('Parser', function() {
     it('should got a valid list', function() {
       var parser = new Parser("(1 2 3)");
       assert(parser.parseList().toString() === '(1 2 3)');
+    });
+  });
+
+  describe('#parseQuote()', function() {
+    it('should got a valid quote list', function() {
+      var parser = new Parser("'(foo bar)");
+      assert(parser.parseQuote().toString() ===
+        Pair.makeList(symbol.create('quote'), symbol.create('foo'), symbol.create('bar')).toString());
     });
   });
 });
