@@ -12,4 +12,11 @@ describe('Pair', function() {
       assert(Pair.empty.toString() == '()');
     });
   });
+
+  describe('.makeList', function() {
+    it('should make a list', function() {
+      var list = Pair.makeList(1, 2, 3, 4);
+      assert('(1 . (2 . (3 . (4 . ()))))' === list.toString());
+    });
+  });
 });
