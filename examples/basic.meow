@@ -1,0 +1,7 @@
+(console/log "Meow!")
+;; console.log("Meow!");
+
+(lambda (x y) (+ x y))
+;; function(x, y) { meow.builtin.add(x, y); }
+
+(define truth 42)
