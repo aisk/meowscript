@@ -1,5 +1,6 @@
 var assert = require('assert');
 var Parser = require('../lib/parser');
+var symbol = require('../lib/symbol');
 
 describe('Parser', function() {
   describe('#parse()', function() {
@@ -27,7 +28,7 @@ describe('Parser', function() {
   describe('#parseSymbol()', function() {
     it('should got a valid symbol', function() {
       var parser = new Parser('i-am-a-symbol');
-      assert('i-am-a-symbol' === parser.parseSymbol());
+      assert(symbol.create('i-am-a-symbol') === parser.parseSymbol());
     });
   });
 
