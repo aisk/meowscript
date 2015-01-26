@@ -7,5 +7,9 @@ describe('Pair', function() {
       var pair = new Pair('foo', 'bar');
       assert(pair.toString() === '(foo . bar)');
     });
+
+    it('should get a empty format of pair', function() {
+      assert(Pair.empty.toString() == '()');
+    });
   });
 });
