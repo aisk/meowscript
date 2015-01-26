@@ -15,7 +15,7 @@ describe('Pair', function() {
     it('should get the string format of list', function() {
       var list = new Pair('foo', new Pair('bar', Pair.empty));
       assert(Pair.isList(list));
-      console.log(list.toString());
+      assert(list.toString() === '(foo bar)');
     });
   });
 

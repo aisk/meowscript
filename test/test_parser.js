@@ -42,4 +42,11 @@ describe('Parser', function() {
       assert(-12.34 === parser.parseNumber());
     });
   });
+
+  describe('#parseList()', function() {
+    it('should got a valid list', function() {
+      var parser = new Parser("(1 2 3)");
+      assert(parser.parseList().toString() === '(1 2 3)');
+    });
+  });
 });
