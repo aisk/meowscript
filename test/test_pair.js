@@ -11,12 +11,18 @@ describe('Pair', function() {
     it('should get a empty format of pair', function() {
       assert(Pair.empty.toString() == '()');
     });
+
+    it('should get the string format of list', function() {
+      var list = new Pair('foo', new Pair('bar', Pair.empty));
+      assert(Pair.isList(list));
+      console.log(list.toString());
+    });
   });
 
   describe('.makeList()', function() {
     it('should make a list', function() {
       var list = Pair.makeList(1, 2, 3, 4);
-      assert('(1 . (2 . (3 . (4 . ()))))' === list.toString());
+      assert('(1 2 3 4)' === list.toString());
     });
   });
 
