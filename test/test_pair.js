@@ -13,10 +13,22 @@ describe('Pair', function() {
     });
   });
 
-  describe('.makeList', function() {
+  describe('.makeList()', function() {
     it('should make a list', function() {
       var list = Pair.makeList(1, 2, 3, 4);
       assert('(1 . (2 . (3 . (4 . ()))))' === list.toString());
+    });
+  });
+
+  describe('.isList()', function() {
+    it('should be a list', function() {
+      var list = Pair.makeList(1, 2, 3);
+      assert(Pair.isList(list));
+    });
+
+    it('shouldn\'t be a list', function() {
+      var pair = new Pair(1, 2);
+      assert(!Pair.isList(pair));
     });
   });
 });
