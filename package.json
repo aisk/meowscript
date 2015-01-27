@@ -1,7 +1,7 @@
 {
   "name": "meowscript",
   "version": "0.0.1",
-  "description": "",
+  "description": "a scheme dialect compiles to native JavaScript",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
