@@ -8,7 +8,5 @@
   },
   "author": "asaka",
   "license": "MIT",
-  "dependencies": {
-    "es6-symbol": "^1.0.0"
-  }
+  "dependencies": {}
 }
