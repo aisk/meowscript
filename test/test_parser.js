@@ -58,5 +58,11 @@ describe('Parser', function() {
       assert(parser.parseQuote().toString() ===
         Pair.makeList(symbol.create('quote'), symbol.create('foo'), symbol.create('bar')).toString());
     });
+
+    it('should got a valid quasiquote list', function() {
+      var parser = new Parser("`(foo bar)");
+      assert(parser.parseQuote().toString() ===
+        Pair.makeList(symbol.create('quasiquote'), symbol.create('foo'), symbol.create('bar')).toString());
+      });
   });
 });
