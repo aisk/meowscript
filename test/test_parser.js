@@ -65,4 +65,17 @@ describe('Parser', function() {
         Pair.makeList(symbol.create('quasiquote'), symbol.create('foo'), symbol.create('bar')).toString());
       });
   });
+
+  describe('#parse()', function() {
+    it('should go a valid expr', function() {
+      var parser = new Parser('(display "Hello World!")');
+      var expr = parser.parse();
+    });
+
+    it('should go a nested expr', function() {
+      var parser = new Parser("(+ 1 (- 3 2))");
+      var expr = parser.parse();
+      assert(expr.toString() === '(+ 1 (- 3 2))');
+    });
+  });
 });
