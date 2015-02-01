@@ -26,6 +26,13 @@ describe('Pair', function() {
     });
   });
 
+  describe('.listEach()', function() {
+    var result = 0;
+    var list = Pair.makeList(2, 10, 30);
+    Pair.listEach(list, function(elem) {result += elem;});
+    assert(result === 42);
+  });
+
   describe('.isList()', function() {
     it('should be a list', function() {
       var list = Pair.makeList(1, 2, 3);
