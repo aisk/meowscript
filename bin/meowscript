@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var readline = require('readline');
+var Parser = require('../lib/parser');
+
+console.log('Welcome to meowscript😼');
+
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.setPrompt('=> ');
+rl.prompt();
+
+rl.on('line', (line) => {
+  if (line.trim() === '') {
+    rl.prompt();
+    return;
+  }
+
+  var parser = new Parser(line);
+  try {
+    var expr = parser.parse();
+    console.log(expr.toString());
+  } catch (err) {
+    console.warn(err.stack);
+  }
+
+  rl.prompt();
+}).on('close', () => {
+  console.log('Bye!');
+  process.exit(0);
+});

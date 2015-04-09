@@ -4,6 +4,7 @@
   "description": "a scheme dialect compiles to native JavaScript",
   "main": "index.js",
   "scripts": {
+    "start": "node bin/repl.js",
     "test": "mocha"
   },
   "author": "asaka",
