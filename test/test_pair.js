@@ -29,7 +29,7 @@ describe('Pair', function() {
   describe('.listEach()', function() {
     var result = 0;
     var list = Pair.makeList(2, 10, 30);
-    Pair.listEach(list, function(elem) {result += elem;});
+    Pair.listEach(list, function(i, elem) {result += elem;});
     assert(result === 42);
   });
 

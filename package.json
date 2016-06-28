@@ -9,5 +9,7 @@
   },
   "author": "asaka",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "escodegen": "^1.8.0"
+  }
 }

@@ -4,6 +4,7 @@
 
 var readline = require('readline');
 var Parser = require('../lib/parser');
+var Compiler = require('../lib/compiler');
 
 console.log('Welcome to meowscript😼');
 
@@ -15,7 +16,7 @@ var rl = readline.createInterface({
 rl.setPrompt('=> ');
 rl.prompt();
 
-rl.on('line', (line) => {
+rl.on('line', function(line) {
   if (line.trim() === '') {
     rl.prompt();
     return;
@@ -29,8 +30,11 @@ rl.on('line', (line) => {
     console.warn(err.stack);
   }
 
+  var compiler = new Compiler();
+  console.log(compiler.compile(expr));
+
   rl.prompt();
-}).on('close', () => {
+}).on('close', function() {
   console.log('Bye!');
   process.exit(0);
 });
