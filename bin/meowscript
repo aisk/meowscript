@@ -2,8 +2,9 @@
 
 'use strict';
 
-var readline = require('readline');
-var Parser = require('../lib/parser');
+const readline = require('readline');
+const Parser = require('../lib/parser');
+const evil = require('../lib/eval'); 
 
 console.log('Welcome to meowscript😼');
 
@@ -23,8 +24,10 @@ rl.on('line', function(line) {
 
   var parser = new Parser(line);
   try {
-    var expr = parser.parse();
-    console.log(expr.toString());
+    let expr = parser.parse();
+    console.log("AST =>", expr.toString());
+    let result = evil(expr, {});
+    console.log("eval =>", result);
   } catch (err) {
     console.warn(err.stack);
   }
