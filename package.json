@@ -9,10 +9,8 @@
   },
   "author": "asaka",
   "license": "MIT",
+  "devDependencies": {},
   "dependencies": {
-    "escodegen": "^1.8.0"
-  },
-  "devDependencies": {
     "mocha": "^3.2.0"
   }
 }
