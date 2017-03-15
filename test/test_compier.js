@@ -1,6 +1,6 @@
 var assert = require('assert');
-var Compiler = require('./../lib/Compiler');
-var Parser = require('./../lib/Parser');
+var Compiler = require('./../lib/compiler');
+var Parser = require('./../lib/parser');
 
 describe('Compilder', function() {
   describe('#new', function() {
@@ -9,5 +9,5 @@ describe('Compilder', function() {
       var compider = new Compiler(parser.parse());
     });
   });
-  
+
 });

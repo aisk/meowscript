@@ -4,12 +4,15 @@
   "description": "a scheme dialect compiles to native JavaScript",
   "main": "index.js",
   "scripts": {
-    "start": "node bin/repl.js",
+    "start": "node bin/meowscript",
     "test": "mocha"
   },
   "author": "asaka",
   "license": "MIT",
   "dependencies": {
     "escodegen": "^1.8.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
   }
 }
